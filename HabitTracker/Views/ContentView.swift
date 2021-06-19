@@ -8,14 +8,39 @@
 import SwiftUI
 
 struct ContentView: View {
+    @ObservedObject var habitTracker = HabitTrackingViewModel.instance
+    
     var body: some View {
-        Text("Hello, world!")
-            .padding()
+        NavigationView {
+            Form {
+                ForEach(habitTracker.habits) { habit in
+                    NavigationLink(habit.title + " : Count " + String(habit.count) , destination: HabitDetailsView(habit))
+                }.onDelete(perform: { indexSet in
+                    deleteHabit(index: indexSet)
+                })
+            }.navigationBarTitle("Habit Tracker", displayMode: .inline)
+            .navigationBarItems(leading: EditButton(),
+                trailing: Button(action: addHabit) {
+                    Image(systemName: "plus.circle")
+                        .scaleEffect(2)
+            })
+        }
+        
     }
+    
+    func addHabit() {
+        
+    }
+    
+    func deleteHabit(index set: IndexSet) {
+        habitTracker.habits.remove(atOffsets: set)
+    }
+    
+    
 }
 
 struct ContentView_Previews: PreviewProvider {
-    static let habit = HabitModel(title: "Sample habit", description: "This is a sample habit", count: 1)
+
     static var previews: some View {
         ContentView()
     }
