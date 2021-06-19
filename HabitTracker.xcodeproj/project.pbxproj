@@ -12,6 +12,8 @@
 		852E9D7E267E1EA300F0E945 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 852E9D7D267E1EA300F0E945 /* Assets.xcassets */; };
 		852E9D81267E1EA300F0E945 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 852E9D80267E1EA300F0E945 /* Preview Assets.xcassets */; };
 		852E9D8A267E231500F0E945 /* HabitModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 852E9D89267E231500F0E945 /* HabitModel.swift */; };
+		852E9D8E267E23DA00F0E945 /* AddHabitView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 852E9D8D267E23DA00F0E945 /* AddHabitView.swift */; };
+		852E9D90267E23F800F0E945 /* HabitDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 852E9D8F267E23F800F0E945 /* HabitDetailsView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +24,8 @@
 		852E9D80267E1EA300F0E945 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		852E9D82267E1EA300F0E945 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		852E9D89267E231500F0E945 /* HabitModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HabitModel.swift; sourceTree = "<group>"; };
+		852E9D8D267E23DA00F0E945 /* AddHabitView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddHabitView.swift; sourceTree = "<group>"; };
+		852E9D8F267E23F800F0E945 /* HabitDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HabitDetailsView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -92,6 +96,8 @@
 			isa = PBXGroup;
 			children = (
 				852E9D7B267E1EA000F0E945 /* ContentView.swift */,
+				852E9D8D267E23DA00F0E945 /* AddHabitView.swift */,
+				852E9D8F267E23F800F0E945 /* HabitDetailsView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -166,6 +172,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				852E9D8A267E231500F0E945 /* HabitModel.swift in Sources */,
+				852E9D90267E23F800F0E945 /* HabitDetailsView.swift in Sources */,
+				852E9D8E267E23DA00F0E945 /* AddHabitView.swift in Sources */,
 				852E9D7C267E1EA000F0E945 /* ContentView.swift in Sources */,
 				852E9D7A267E1EA000F0E945 /* HabitTrackerApp.swift in Sources */,
 			);
