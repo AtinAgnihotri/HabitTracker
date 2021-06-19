@@ -12,10 +12,23 @@ class HabitTrackingViewModel: ObservableObject {
     private var currentHabitIndex = 0
     static let instance = HabitTrackingViewModel()
     
-    @Published var habits = [HabitModel]()
+    @Published var habits = [HabitModel]() {
+        didSet {
+            let encoder = JSONEncoder()
+            if let data = try? encoder.encode(habits) {
+                UserDefaults.standard.set(data, forKey: "HabitData")
+            }
+        }
+    }
     
     private init() {
 //        habitStub()
+        if let data = UserDefaults.standard.data(forKey: "HabitData") {
+            let decoder = JSONDecoder()
+            if let decodedData = try? decoder.decode([HabitModel].self, from: data) {
+                self.habits = decodedData
+            }
+        }
     }
     
     func habitStub () {
