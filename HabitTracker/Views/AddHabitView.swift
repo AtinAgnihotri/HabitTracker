@@ -12,6 +12,10 @@ struct AddHabitView: View {
     @ObservedObject var habitTracker = HabitTrackingViewModel.instance
     @State private var title = ""
     @State private var description = ""
+    @State private var showAlert = false
+    @State private var alertMsg = ""
+    @State private var alertTitle = ""
+    
     var body: some View {
         VStack {
             Spacer()
@@ -21,35 +25,53 @@ struct AddHabitView: View {
                     TextField("A good habit name", text: $title)
                 }
                 Section(header: Text("Description of the habit")) {
-//                    TextField("", text: $description)
                     TextEditor(text: $description)
                 }
+                
+//                Spacer()
+            }
+            Group {
                 Section {
                     Button("SAVE") {
                         addHabit()
                     }
-                    .padding()
                     .frame(maxWidth: .infinity)
+                    .padding()
+//                    .frame(maxWidth: .infinity)
                     .background(Color.green)
                     .foregroundColor(Color.primary)
                     .clipShape(RoundedRectangle(cornerRadius: 10.0))
                     Button("DISMISS") {
                         dismiss()
                     }
-                    .padding()
                     .frame(maxWidth: .infinity)
+                    .padding()
+                    
                     .background(Color.red)
                     .foregroundColor(Color.primary)
                     .clipShape(RoundedRectangle(cornerRadius: 10.0))
                 }
-//                Spacer()
-            }
+                
+            }.padding(.horizontal)
             Spacer()
             
+        }.alert(isPresented: $showAlert) {
+            Alert(title: Text(alertTitle), message: Text(alertMsg), dismissButton: .default(Text("OK")))
         }
     }
     
+    func showAlert(alertTitle: String, alertMsg: String) {
+        self.alertTitle = alertTitle
+        self.alertMsg = alertMsg
+        showAlert = true
+    }
+    
     func addHabit() {
+        guard title != "" else {
+            showAlert(alertTitle: "Empty Name", alertMsg: "The name cannot be empty")
+            return
+        }
+        
         habitTracker.addHabitToList(name: title, description: description)
         dismiss()
     }
