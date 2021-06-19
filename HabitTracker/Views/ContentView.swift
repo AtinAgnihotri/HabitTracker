@@ -9,12 +9,13 @@ import SwiftUI
 
 struct ContentView: View {
     @ObservedObject var habitTracker = HabitTrackingViewModel.instance
+    @State private var addingHabit = false
     
     var body: some View {
         NavigationView {
             Form {
                 ForEach(habitTracker.habits) { habit in
-                    NavigationLink(habit.title + " : Count " + String(habit.count) , destination: HabitDetailsView(habit))
+                    NavigationLink(habit.title, destination: HabitDetailsView(habit))
                 }.onDelete(perform: { indexSet in
                     deleteHabit(index: indexSet)
                 })
@@ -23,13 +24,15 @@ struct ContentView: View {
                 trailing: Button(action: addHabit) {
                     Image(systemName: "plus.circle")
                         .scaleEffect(2)
-            })
+                })
+        }.sheet(isPresented: $addingHabit) {
+            AddHabitView()
         }
         
     }
     
     func addHabit() {
-        
+        addingHabit = true
     }
     
     func deleteHabit(index set: IndexSet) {
