@@ -15,6 +15,7 @@ struct ContentView: View {
 }
 
 struct ContentView_Previews: PreviewProvider {
+    static let habit = HabitModel(title: "Sample habit", description: "This is a sample habit", count: 1)
     static var previews: some View {
         ContentView()
     }

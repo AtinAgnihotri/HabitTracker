@@ -14,6 +14,7 @@
 		852E9D8A267E231500F0E945 /* HabitModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 852E9D89267E231500F0E945 /* HabitModel.swift */; };
 		852E9D8E267E23DA00F0E945 /* AddHabitView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 852E9D8D267E23DA00F0E945 /* AddHabitView.swift */; };
 		852E9D90267E23F800F0E945 /* HabitDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 852E9D8F267E23F800F0E945 /* HabitDetailsView.swift */; };
+		852E9D92267E2D8900F0E945 /* HabitTrackingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 852E9D91267E2D8900F0E945 /* HabitTrackingViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,7 @@
 		852E9D89267E231500F0E945 /* HabitModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HabitModel.swift; sourceTree = "<group>"; };
 		852E9D8D267E23DA00F0E945 /* AddHabitView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddHabitView.swift; sourceTree = "<group>"; };
 		852E9D8F267E23F800F0E945 /* HabitDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HabitDetailsView.swift; sourceTree = "<group>"; };
+		852E9D91267E2D8900F0E945 /* HabitTrackingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HabitTrackingViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -88,6 +90,7 @@
 		852E9D8B267E237F00F0E945 /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
+				852E9D91267E2D8900F0E945 /* HabitTrackingViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -171,6 +174,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				852E9D92267E2D8900F0E945 /* HabitTrackingViewModel.swift in Sources */,
 				852E9D8A267E231500F0E945 /* HabitModel.swift in Sources */,
 				852E9D90267E23F800F0E945 /* HabitDetailsView.swift in Sources */,
 				852E9D8E267E23DA00F0E945 /* AddHabitView.swift in Sources */,
